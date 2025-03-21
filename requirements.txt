@@ -1,0 +1,9 @@
+fastapi==0.115.11
+uvicorn==0.34.0
+docker==7.1.0
+PyGithub==2.6.1
+gradio==5.22.0
+requests==2.32.3
+python-multipart==0.0.20
+pydantic==2.10.6
+aider-chat==0.75.1

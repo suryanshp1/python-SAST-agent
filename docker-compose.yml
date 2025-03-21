@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+     - ./.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/app
+
+  frontend:
+    build: .
+    ports:
+      - "7860:7860"
+    command: python frontend.py
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=http://backend:8000
+    volumes:
+      - .:/app
